@@ -234,3 +234,122 @@ int main(int argc, const char * argv[]) {
   return 0;
 }
 
+// Output
+
+// Processing file: 'bankers_tinier.txt'...
+
+// Banker's algorithm simulation beginning...
+// --------------------------------------------
+// avail: [ 2]
+// P#0     2     3     1
+// P#1     1     4     3
+// P#2     1     2     1
+// P#3     2     4     2
+
+// <<< Customer thread p#0 started... >>>
+// REQUEST of  1 for customer 0 request was approved: YES
+// avail: [ 1]
+// P#0     3     3     0
+// P#1     1     4     3
+// P#2     1     2     1
+// P#3     2     4     2
+
+// Customer p#0 has released all resources and is shutting down
+// avail: [ 4]
+// P#0     0     0     0
+// P#1     1     4     3
+// P#2     1     2     1
+// P#3     2     4     2
+
+// >>>>>>>>>>>>>>> Customer thread p#0 shutting down... <<<<<<<<<<<<<<<<<
+
+// avail: [ 4]
+// P#0     0     0     0
+// P#1     1     4     3
+// P#2     1     2     1
+// P#3     2     4     2
+
+// <<< Customer thread p#1 started... >>>
+// REQUEST of  3 for customer 1 request was approved: YES
+// avail: [ 1]
+// P#0     0     0     0
+// P#1     4     4     0
+// P#2     1     2     1
+// P#3     2     4     2
+
+// Customer p#1 has released all resources and is shutting down
+// avail: [ 5]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     1     2     1
+// P#3     2     4     2
+
+// >>>>>>>>>>>>>>> Customer thread p#1 shutting down... <<<<<<<<<<<<<<<<<
+
+// avail: [ 5]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     1     2     1
+// P#3     2     4     2
+
+// <<< Customer thread p#3 started... >>>
+// REQUEST of  1 for customer 3 request was approved: YES
+// avail: [ 4]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     1     2     1
+// P#3     3     4     1
+
+// REQUEST of  1 for customer 3 request was approved: YES
+// <<< Customer thread p#2 started... >>>
+// REQUEST of  1 for customer 2 request was approved: YES
+// avail: [ 2]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     2     2     0
+// P#3     4     4     0
+
+// Customer p#2 has released all resources and is shutting down
+// avail: [ 4]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     0     0     0
+// P#3     4     4     0
+
+// >>>>>>>>>>>>>>> Customer thread p#2 shutting down... <<<<<<<<<<<<<<<<<
+
+// avail: [ 4]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     0     0     0
+// P#3     4     4     0
+
+// avail: [ 4]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     0     0     0
+// P#3     4     4     0
+
+// Customer p#3 has released all resources and is shutting down
+// avail: [ 8]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     0     0     0
+// P#3     0     0     0
+
+// >>>>>>>>>>>>>>> Customer thread p#3 shutting down... <<<<<<<<<<<<<<<<<
+
+// avail: [ 8]
+// P#0     0     0     0
+// P#1     0     0     0
+// P#2     0     0     0
+// P#3     0     0     0
+
+
+// Banker's algorithm simulation completed...
+
+
+
+
+
+//                 ...done.

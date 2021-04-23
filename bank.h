@@ -24,23 +24,26 @@ public:
     bool found = false;
 
     //Creating an instance of the customers
-    const Customer* c = customers[id];
+    Customer* c = customers[id];
 
     // create copy of bank available resources
-    ext_vector<int> bank_copy = this->avail;
+    ext_vector<int> currAvail = avail;
+    ext_vector<Customer*> currCustomers = customers;
     // pseudo-approve request
-    bank_copy -= req;
+    c->alloc_req(req);
+    currAvail -= req;
 
     // can we satisfy another request?
-    for(size_t j = 0; j < this->avail.size(); j++){
-      if(j == id) continue; // don't count pseudo-approved request
-      if(bank_copy >= this->customers[j]->create_req()){
+    for(int j = 0; j < currCustomers.size(); j++){
+      // if(j == id) continue; // don't count pseudo-approved request
+      if(currCustomers[j]->needs_exceeded(currAvail)){
          found = true;
       }
     }
-
+    c->dealloc_req(req);
+    currAvail += req;
     return found;
-  }   
+  }    
 
   bool req_approved(int id, const ext_vector<int>& req) {
     if (req > avail) { return false; }
