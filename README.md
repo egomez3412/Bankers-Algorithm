@@ -2,7 +2,7 @@ William McCarthy
 
 Spring 2021 CPSC 351-05 13911
 
-Project 2 - Banker's Algorithm
+Project 3 - Banker's Algorithm
 
 Group members:
 
